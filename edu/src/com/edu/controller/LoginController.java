@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.edu.component.Log;
 import com.edu.domain.ImageCode;
 import com.edu.service.SystemConfigService;
 import com.edu.service.UserServiceI;
@@ -44,7 +45,8 @@ public class LoginController {
 	private ImageCode imageCode;
 	
 	@RequestMapping("/login.do")
-	public ModelAndView getAllUser(UserVo user,HttpServletRequest request){
+	@Log(operationName="登录操作",operationType="login操作")
+	public ModelAndView login(UserVo user,HttpServletRequest request,HttpServletResponse response){
 		ModelAndView mav = new ModelAndView();
 		if(user==null){
 			mav.addObject("msg", "验证码错误！");
@@ -60,11 +62,16 @@ public class LoginController {
 			return mav;
 		}
 		SecurityUtils.getSecurityManager().logout(SecurityUtils.getSubject());  
+		
 		try{
 			// shiro token 验证
 	        UsernamePasswordToken token = new UsernamePasswordToken(user.getName(), user.getPassword());  
 	        Subject subject = SecurityUtils.getSubject();  
 	        subject.login(token);
+	        mav.setViewName("redirect:/home.do");
+	        
+	        session = request.getSession(true);
+	        session.setAttribute("userName", user.getName());
 		}catch (IncorrectCredentialsException e1) {
 			mav.addObject("msg", "用户名或密码错误!");
 			mav.setViewName("redirect:/login.jsp");
@@ -74,51 +81,48 @@ public class LoginController {
 			mav.setViewName("redirect:/login.jsp");
 			return mav;
 		}
-//		mav.setViewName("/home.do");
-		mav.setViewName("redirect:/home.do");
 		return mav;
 	}
 	
 	@RequestMapping(value = "/home.do")
+	@Log(operationName="返回主页操作",operationType="home操作")
 	public String home(HttpServletRequest request){
 		return "home";
 	}
 	
 	@RequestMapping(value = "/logout.do")
+	@Log(operationName="退出系统操作",operationType="logout操作")
 	public ModelAndView logout(HttpServletRequest request){
 		ModelAndView mav = new ModelAndView();
 		Subject subject = SecurityUtils.getSubject();  
 		SecurityUtils.getSecurityManager().logout(subject);
-		mav.addObject("msg", "已成功推出登录！");
+		//注销session
+		request.getSession().invalidate();
+		mav.addObject("msg", "已成功退出登录！");
 		mav.setViewName("redirect:/login.jsp");
 		return mav;
 	}
 	
 	@RequestMapping(value = "/getKaptchaImage.do")
+	@Log(operationName="获取验证码图片操作",operationType="getcheckImage操作")
     public void getKaptchaImage(HttpServletRequest request, HttpServletResponse response) throws Exception {  
         HttpSession session = request.getSession();
         /*String code = (String)session.getAttribute(Constants.KAPTCHA_SESSION_KEY);  
         System.out.println("******************��֤����: " + code + "******************");  */
         response.setDateHeader("Expires", 0);  
-          
         // Set standard HTTP/1.1 no-cache headers.  
         response.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
-          
         // Set IE extended HTTP/1.1 no-cache headers (use addHeader).  
         response.addHeader("Cache-Control", "post-check=0, pre-check=0");
-          
         // Set standard HTTP/1.0 no-cache header.  
         response.setHeader("Pragma", "no-cache");
-          
         // return a jpeg  
         response.setContentType("image/jpeg");
-          
         // create the text for the image  
         String capText = captchaProducer.createText();
         // store the text in the session  
         session.setAttribute(Constants.KAPTCHA_SESSION_KEY, capText);
         session.setAttribute("TIMEOUT", System.currentTimeMillis());
-          
         // create the image with the text  
         BufferedImage bi = captchaProducer.createImage(capText);  
         ServletOutputStream out = response.getOutputStream();  
@@ -132,6 +136,7 @@ public class LoginController {
     }
 	
 	@RequestMapping(value = "/validateKaptchaImage")
+	@Log(operationName="校验验证码图片操作",operationType="validatecheckImage操作")
     @ResponseBody
     public boolean validateKaptchaImage(HttpSession session,String kaptcha) {  
 		boolean flag = false;
@@ -142,7 +147,6 @@ public class LoginController {
 		}
 		return flag;
     }
-	
 /*    @RequestMapping(value = "/getImage.do")
     public void getImage(HttpServletRequest request, HttpServletResponse response
             ) throws IOException {
