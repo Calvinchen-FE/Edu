@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.edu.dao.TzggMapper" >
+  <resultMap id="BaseResultMap" type="com.edu.domain.Tzgg" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="bt" property="bt" jdbcType="VARCHAR" />
+    <result column="fbsj" property="fbsj" jdbcType="TIMESTAMP" />
+    <result column="zd" property="zd" jdbcType="INTEGER" />
+    <result column="cjsj" property="cjsj" jdbcType="TIMESTAMP" />
+    <result column="cjr" property="cjr" jdbcType="VARCHAR" />
+    <result column="gxsj" property="gxsj" jdbcType="TIMESTAMP" />
+    <result column="gxr" property="gxr" jdbcType="VARCHAR" />
+    <result column="zt" property="zt" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.edu.domain.Tzgg" extends="BaseResultMap" >
+    <result column="nr" property="nr" jdbcType="LONGVARBINARY" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, bt, fbsj, zd, cjsj, cjr, gxsj, gxr, zt
+  </sql>
+  <sql id="Blob_Column_List" >
+    nr
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from app_tzgg
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from app_tzgg
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.edu.domain.Tzgg" >
+    insert into app_tzgg (id, bt, fbsj, 
+      zd, cjsj, cjr, gxsj, 
+      gxr, zt, nr)
+    values (#{id,jdbcType=VARCHAR}, #{bt,jdbcType=VARCHAR}, #{fbsj,jdbcType=TIMESTAMP}, 
+      #{zd,jdbcType=INTEGER}, #{cjsj,jdbcType=TIMESTAMP}, #{cjr,jdbcType=VARCHAR}, #{gxsj,jdbcType=TIMESTAMP}, 
+      #{gxr,jdbcType=VARCHAR}, #{zt,jdbcType=INTEGER}, #{nr,jdbcType=LONGVARBINARY})
+  </insert>
+  <insert id="insertSelective" parameterType="com.edu.domain.Tzgg" >
+    insert into app_tzgg
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="bt != null" >
+        bt,
+      </if>
+      <if test="fbsj != null" >
+        fbsj,
+      </if>
+      <if test="zd != null" >
+        zd,
+      </if>
+      <if test="cjsj != null" >
+        cjsj,
+      </if>
+      <if test="cjr != null" >
+        cjr,
+      </if>
+      <if test="gxsj != null" >
+        gxsj,
+      </if>
+      <if test="gxr != null" >
+        gxr,
+      </if>
+      <if test="zt != null" >
+        zt,
+      </if>
+      <if test="nr != null" >
+        nr,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="bt != null" >
+        #{bt,jdbcType=VARCHAR},
+      </if>
+      <if test="fbsj != null" >
+        #{fbsj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="zd != null" >
+        #{zd,jdbcType=INTEGER},
+      </if>
+      <if test="cjsj != null" >
+        #{cjsj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cjr != null" >
+        #{cjr,jdbcType=VARCHAR},
+      </if>
+      <if test="gxsj != null" >
+        #{gxsj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gxr != null" >
+        #{gxr,jdbcType=VARCHAR},
+      </if>
+      <if test="zt != null" >
+        #{zt,jdbcType=INTEGER},
+      </if>
+      <if test="nr != null" >
+        #{nr,jdbcType=LONGVARBINARY},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.edu.domain.Tzgg" >
+    update app_tzgg
+    <set >
+      <if test="bt != null" >
+        bt = #{bt,jdbcType=VARCHAR},
+      </if>
+      <if test="fbsj != null" >
+        fbsj = #{fbsj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="zd != null" >
+        zd = #{zd,jdbcType=INTEGER},
+      </if>
+      <if test="cjsj != null" >
+        cjsj = #{cjsj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cjr != null" >
+        cjr = #{cjr,jdbcType=VARCHAR},
+      </if>
+      <if test="gxsj != null" >
+        gxsj = #{gxsj,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gxr != null" >
+        gxr = #{gxr,jdbcType=VARCHAR},
+      </if>
+      <if test="zt != null" >
+        zt = #{zt,jdbcType=INTEGER},
+      </if>
+      <if test="nr != null" >
+        nr = #{nr,jdbcType=LONGVARBINARY},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.edu.domain.Tzgg" >
+    update app_tzgg
+    set bt = #{bt,jdbcType=VARCHAR},
+      fbsj = #{fbsj,jdbcType=TIMESTAMP},
+      zd = #{zd,jdbcType=INTEGER},
+      cjsj = #{cjsj,jdbcType=TIMESTAMP},
+      cjr = #{cjr,jdbcType=VARCHAR},
+      gxsj = #{gxsj,jdbcType=TIMESTAMP},
+      gxr = #{gxr,jdbcType=VARCHAR},
+      zt = #{zt,jdbcType=INTEGER},
+      nr = #{nr,jdbcType=LONGVARBINARY}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.edu.domain.Tzgg" >
+    update app_tzgg
+    set bt = #{bt,jdbcType=VARCHAR},
+      fbsj = #{fbsj,jdbcType=TIMESTAMP},
+      zd = #{zd,jdbcType=INTEGER},
+      cjsj = #{cjsj,jdbcType=TIMESTAMP},
+      cjr = #{cjr,jdbcType=VARCHAR},
+      gxsj = #{gxsj,jdbcType=TIMESTAMP},
+      gxr = #{gxr,jdbcType=VARCHAR},
+      zt = #{zt,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="getAllTzgg" resultMap="BaseResultMap">
+  		select <include refid="Base_Column_List" /> from app_tzgg
+  </select>
+</mapper>

@@ -1,0 +1,255 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <base href="<%=basePath%>">
+    
+    <title>My JSP 'peixunxinxi.jsp' starting page</title>
+    
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	<link rel="stylesheet" type="text/css" href="resources/styles/yzzx-all.min.css">
+	<link rel="stylesheet" type="text/css" href="resources/styles/masklayer.css">
+	<link rel="stylesheet" type="text/css" href="resources/styles/style.css">
+    <link rel="stylesheet" type="text/css" href="resources/styles/bootstrap-datetimepicker.min.css">
+	
+  </head>
+  
+  <body>
+    <div id="container" class="effect mainnav-lg">
+        <header id="navbar" class="index_fixed">
+            <div id="navbar-container">
+                <div class="navbar-header">
+                    <a class="navbar-brand">
+
+                        <div class="brand-title">
+                            <span class="storename" data-lang=""></span>
+                        </div>
+                    </a>
+                </div>
+                <div class="navbar-content clearfix">
+                    <ul class="nav navbar-top-links pull-left">
+                        <li class="tgl-menu-btn">
+                            <a class="mainnav-toggle" href="" style=" padding-left: 0; padding-bottom: 2px;">西安科技大学 教师发展在线能力系统
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-top-links pull-right">
+                        <li id="dropdown-user" class="dropdown">
+                            <a href="" data-toggle="dropdown" class="dropdown-toggle text-right" data-original-title="" title="">
+                                <div class="username hidden-xs">修改密码和退出</div>
+                            </a>
+
+
+                            <div class="dropdown-menu dropdown-menu-md dropdown-menu-right panel-default">
+
+                                <ul class="head-list">
+                                    <li>
+                                        <a href="javascript:;" name="editpwd">修改密码
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <!-- Dropdown footer -->
+                                <div class="pad-all text-right">
+                                    <a href="javascript:;" class="btn btn-primary exitlogin">
+                                    <span data-lang="main_exit">退出登录</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <div>
+            <div id="content-container"><!--面包屑导航-->
+<div id="page-title">
+</div>
+
+
+<div id="page-content">
+        <div class="panel" name="datatable">
+            <div class="panel-heading">
+                <h3 class="panel-title"><span data-lang="goodsBuy_title">培训信息</span></h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div id="goodsBuy_table_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-12">
+                            <table class="table table-striped table-bordered table-hover text-center dataTable">
+                                <tr>
+                                    <th>序号</th>
+                                    <th>活动主题</th>
+                                    <th>截止日期</th>
+                                    <th>活动时间</th>
+                                    <th>活动地点</th>
+                                    <th>组织单位</th>
+                                    <th>名额</th>
+                                    <th>活动类型</th>
+                                    <th>状态</th>
+                                    <th>操作</th>
+                                </tr>
+                                <tbody  id="dataList">
+                                </tbody>
+                            </table>
+                        </div></div>
+                        <div class="row">
+                            <div class="col-sm-2">
+                            <div class="dataTables_info" id="goodsBuy_table_info">第 0 到 0 条记录，共 0 条</div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div><label>每页显示条数: <select class="form-control input-sm"><option value="5">5</option><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></label></div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="dataTables_paginate paging_full_numbers">
+                                    <ul class="pagination">
+                                        <li class="paginate_button first disabled" id="goodsBuy_table_first"><a href="javascript:;" >首页</a></li>
+                                        <li class="paginate_button previous disabled"><a href="javascript:;">上页</a></li>
+                                        <li class="paginate_button previous disabled"><a href="javascript:;">当前第1页</a></li>
+                                        <li class="paginate_button next disabled"><a href="javascript:;">下页</a></li>
+                                        <li class="paginate_button last disabled"><a href="javascript:;">末页</a></li>
+                                        <li class="paginate_button disabled" style="position: relative;top: 4px;">
+                                            &nbsp;&nbsp;
+                                            跳转到第<input style="width:40px;" type="text">页
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+            <!--左侧垂直导航-->
+            <nav id="mainnav-container" class="index_fixed">
+                <!--<div id="mainnav" style=" position: relative; overflow: hidden;">-->
+                <div id="mainnav" class="nano scrollable has-scrollbar" style="border-top: 1px solid rgba(255,255,255, .3);">
+                    <div class="nano-content" tabindex="0" style="right: -17px;">
+                        <ul id="mainnav-menu" class="list-group" style="margin-top:20px;">
+                            <li class="active menu-item">
+                                <a href="">
+                                    <span class="menu-title" data-lang="main_customer_title">首页</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="">
+                                    <span class="menu-title" data-lang="main_customer_title">通知公告</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="">
+                                    <span class="menu-title" data-lang="main_customer_title">培训信息</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="">
+                                    <span class="menu-title" data-lang="main_customer_title">培训档案</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="">
+                                    <span class="menu-title" data-lang="main_customer_title">个人信息</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="">
+                                    <span class="menu-title" data-lang="main_customer_title">通知管理</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="">
+                                    <span class="menu-title" data-lang="main_customer_title">培训管理</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="">
+                                    <span class="menu-title" data-lang="main_customer_title">活动管理</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="">
+                                    <span class="menu-title" data-lang="main_customer_title">报名管理</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="">
+                                    <span class="menu-title" data-lang="main_customer_title">教师管理</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="">
+                                    <span class="menu-title" data-lang="main_customer_title">综合分析</span>
+                                </a>
+                            </li>
+                            
+                            <li class="menu-item">
+                                <a href="javascript:;">
+                                    <span class="menu-title" data-lang="main_customer_title">系统管理</span>
+                                    <i class="arrow"></i>
+                                </a>
+                                <ul class="collapse">
+                                    <li><a href="zuzhijiagou.html">组织架构</a></li>
+                                    <li><a href="yonghuguanli.html">用户管理</a></li>
+                                    <li><a href="jueseguanli.html">角色管理</a></li>
+                                    <li><a href="jueseguanli.html">数据字典</a></li>
+                                    <li><a href="caozuorizhi.html">操作日志</a></li>
+                                    <li><a href="caozuorizhi.html">备份管理</a></li>
+                                    <li><a href="xitongxinxi.html">系统信息</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+                    
+                </div>
+            </nav>
+        </div>
+
+
+        <footer id="footer">
+
+            <div class="version hide-fixed pull-right pad-rgt">Copyright  2016-2017 西安科技大学 教师发展中心</div>
+
+            <p class="pad-lft storename">开发维护：网络信息中心</p>
+        </footer>
+    </div>
+    <div class="modal fade" tabindex="-1" role="dialog" id="baodao">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content modal-lg">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">学生明细</h4>
+          </div>
+          <div class="modal-body">
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-dismiss="modal">确认报到信息</button>
+            <button type="button" class="btn btn-primary">取消</button>
+          </div>
+        </div>
+      </div>
+    </div>
+	
+    <script type="text/javascript" src="resources/js/jquery.min.js"></script>
+    <script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="resources/js/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="resources/js/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script type="text/javascript" src="resources/js/main.js"></script>
+    <script type="text/javascript" src="resources/js/trainingInfo.js"></script>
+  </body>
+</html>

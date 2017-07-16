@@ -1,0 +1,23 @@
+package com.edu.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.edu.dao.TzggMapper;
+import com.edu.domain.Tzgg;
+import com.edu.service.AnnouncementServiceI;
+
+@Service("AnnouncementService")
+public class AnnouncementServiceImpl implements AnnouncementServiceI{
+
+	@Autowired
+	private TzggMapper tzggMapper;
+	@Override
+	public List<Tzgg> getAllTzgg() {
+		// TODO Auto-generated method stub
+		return tzggMapper.getAllTzgg();
+	}
+	
+}
