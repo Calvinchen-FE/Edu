@@ -22,12 +22,15 @@ public class UserController {
 	
 	@RequestMapping("/getAllUser.do")
 	public String getAllUser(HttpServletRequest req){
-		logger.debug("¿ªÊ¼·ÃÎÊ¡£¡£¡£¡£¡£¡£¡£¡£¡£");
+		logger.debug("æ‹¿åˆ°æ‰€æœ‰ç”¨æˆ·ä¿¡æ¯");
 		List<User> lstUsers = userService.getAllUser();
-		logger.info("ÄÃµ½UserÁĞ±í¡£¡£¡£¡£¡£¡£¡£¡£¡£");
 		req.setAttribute("lstUsers", lstUsers);
-		logger.error("log error¼¶±ğ²âÊÔ¡£¡£¡£¡£¡£¡£¡£");
 		return "MyJsp";
+	}
+	
+	public String getUserByName(HttpServletRequest req){
+		
+		return "";
 	}
 	
 }
