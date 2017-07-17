@@ -16,10 +16,12 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd 
 		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd">
 
-	<!-- 启动Spring的支持注解 -->
+<!-- 启动Spring的支持注解 -->
 	<context:annotation-config/>
-	<!-- 注册HandlerMapper、HandlerAdapter两个映射类 -->
 	<mvc:annotation-driven />
+	<!--识别切面，开启CGLIB动态代理-->  
+	<aop:aspectj-autoproxy proxy-target-class="true"/>
+
 	<!-- 配置扫描的包 -->
 	<context:component-scan base-package="com.example.controller" />
 	<context:component-scan base-package="com.edu.controller" />

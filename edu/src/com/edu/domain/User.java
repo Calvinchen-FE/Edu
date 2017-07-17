@@ -12,6 +12,8 @@ public class User {
     private Integer status;
 
     private Date createdate;
+    
+    private Integer jsjbxxid;
 
     public String getId() {
         return id;
@@ -52,4 +54,19 @@ public class User {
     public void setCreatedate(Date createdate) {
         this.createdate = createdate;
     }
+
+	public Integer getJsjbxxid() {
+		return jsjbxxid;
+	}
+
+	public void setJsjbxxid(Integer jsjbxxid) {
+		this.jsjbxxid = jsjbxxid;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", password=" + password
+				+ ", status=" + status + ", createdate=" + createdate
+				+ ", jsjbxxid=" + jsjbxxid + "]";
+	}
 }

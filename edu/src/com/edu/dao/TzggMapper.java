@@ -6,20 +6,21 @@ import com.edu.domain.Tzgg;
 import com.edu.vo.AnnouncementVo;
 
 public interface TzggMapper {
-    int deleteByPrimaryKey(String id);
+    int deleteByPrimaryKey(String tzggh);
 
     int insert(Tzgg record);
 
     int insertSelective(Tzgg record);
 
-    Tzgg selectByPrimaryKey(String id);
+    Tzgg selectByPrimaryKey(String tzggh);
 
     int updateByPrimaryKeySelective(Tzgg record);
 
     int updateByPrimaryKeyWithBLOBs(Tzgg record);
 
     int updateByPrimaryKey(Tzgg record);
-    
-    List<Tzgg> getAllTzgg(AnnouncementVo announcementVo);
-    int getAllTzggCount();  
+
+	Integer getAllTzggCount();
+
+	List<Tzgg> getAllTzgg(AnnouncementVo announcementVo);
 }
