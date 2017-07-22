@@ -39,21 +39,21 @@ var Announcement = function(){
         var xHtml = '';  
         var list = showData.list;
         if (list.length == 0) {  
-            xHtml += '<tr><td colspan="7">没有数据</td></tr>';  
+            xHtml += '<tr><td colspan="2">没有数据</td></tr>';  
             $('#dataList').html(xHtml);  
         } else {  
             for (var i = 0; i < list.length; i++) {  
                 detailId = i;  
                 xHtml += '<tr>';  
-                xHtml += '<td>' + (i + 1)+ '</td>';  
-                xHtml += '<td>'+ list[i].id + '</td>';  
-                xHtml += '<td>'+ list[i].cjr + '</td>';  
-                xHtml += '<td>'+ list[i].gxr + '</td>';  
-                xHtml += '</tr>';  
+                xHtml += '<td><a href="javascript:;" data-toggle="modal" data-target="#announcementContent">'+ list[i].tzggbt + '</a></td>';  
+                xHtml += '<td width="20%">'+ list[i].createAt + '</td>';  
+                xHtml += '</tr>';
+                $('#announcementContentModalLabel').text(list[i].tzggbt);
+                $('#announcementContentModalText').text(list[i].tzggnr);
             }  
             $('#dataList').html(xHtml);  
             var pageBarStr = pageBar.pageInit(showData.page.totalPage, showData.page.pageNo,showData.page.totalCount, announcement.clickPage, 5);
-            $('.search-footer').html(pageBarStr);  
+            $('.search-footer').html(pageBarStr);
         } 
     };  
       

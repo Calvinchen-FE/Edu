@@ -9,13 +9,13 @@ public class Pxhd {
 
     private String zjr;
 
-    private String hdnf;
+    private Integer hdnf;
 
-    private String bmjzsj;
+    private Date bmjzsj;
 
-    private String hdsj;
+    private Date hdsj;
 
-    private Integer hdzzdw;
+    private String hdzzdw;
 
     private String hddd;
 
@@ -69,36 +69,36 @@ public class Pxhd {
         this.zjr = zjr == null ? null : zjr.trim();
     }
 
-    public String getHdnf() {
+    public Integer getHdnf() {
         return hdnf;
     }
 
-    public void setHdnf(String hdnf) {
-        this.hdnf = hdnf == null ? null : hdnf.trim();
+    public void setHdnf(Integer hdnf) {
+        this.hdnf = hdnf;
     }
 
-    public String getBmjzsj() {
+    public Date getBmjzsj() {
         return bmjzsj;
     }
 
-    public void setBmjzsj(String bmjzsj) {
-        this.bmjzsj = bmjzsj == null ? null : bmjzsj.trim();
+    public void setBmjzsj(Date bmjzsj) {
+        this.bmjzsj = bmjzsj;
     }
 
-    public String getHdsj() {
+    public Date getHdsj() {
         return hdsj;
     }
 
-    public void setHdsj(String hdsj) {
-        this.hdsj = hdsj == null ? null : hdsj.trim();
+    public void setHdsj(Date hdsj) {
+        this.hdsj = hdsj;
     }
 
-    public Integer getHdzzdw() {
+    public String getHdzzdw() {
         return hdzzdw;
     }
 
-    public void setHdzzdw(Integer hdzzdw) {
-        this.hdzzdw = hdzzdw;
+    public void setHdzzdw(String hdzzdw) {
+        this.hdzzdw = hdzzdw == null ? null : hdzzdw.trim();
     }
 
     public String getHddd() {

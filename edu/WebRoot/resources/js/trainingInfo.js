@@ -26,7 +26,7 @@ var TrainingInfo = function(){
     };  
     this.acquireInquireData = function(){ 
         var data = {
-        		pageSize:10,  
+        		pageSize:parseInt($('#pageSize').val()),  
                 pageNo : $('#pageNo').val()
         };  
         return data;  
@@ -35,15 +35,17 @@ var TrainingInfo = function(){
     //返回查询结果  
     this.callback = function(showData) { 
     	var pageNoInput = '<input type="hidden" id="pageNo" value="'+showData.page.pageNo+'"/>';
-    	$('body').append($(pageNoInput));
+    	var pageSizeInput = '<input type="hidden" id="pageSize" value="'+showData.page.pageSize+'"/>';
+    	$('body').append($(pageNoInput)).append($(pageSizeInput));
         var xHtml = '';  
         var list = showData.list;
         if (list.length == 0) {  
-            xHtml += '<tr><td colspan="7">没有数据</td></tr>';  
+            xHtml += '<tr><td colspan="10">没有数据</td></tr>';  
             $('#dataList').html(xHtml);  
         } else {  
             for (var i = 0; i < list.length; i++) {  
                 detailId = i;  
+                var status = list[i].recordStatus === 1 ? '报名中' : '未报名';
                 xHtml += '<tr><td>'+ i +'</td>'+
 		        '<td>'+ list[i].hdzt +'</td>'+
 		        '<td>'+ list[i].bmjzsj +'</td>'+
@@ -52,13 +54,19 @@ var TrainingInfo = function(){
 		        '<td>'+ list[i].hdzzdw +'</td>'+
 		        '<td>'+ list[i].zdcyrs +'</td>'+
 		        '<td>'+ list[i].pjbz +'</td>'+
-		        '<td>'+ list[i].pjnf +'</td>'+
-		        '<td><a class="link" href="javascript:;">报名</a></td>'+
-		        '</tr>';
+		        '<td>'+ status +'</td>'
+		        if(list[i].recordStatus === 1){
+		        	xHtml += '<td><a class="link" href="javascript:;">报名</a></td>';
+		        }else{
+		        	xHtml += '<td></td>';
+		        }
+                xHtml += '</tr>';
             }  
             $('#dataList').html(xHtml);  
-            var pageBarStr = pageBar.pageInit(showData.page.totalPage, showData.page.pageNo,showData.page.totalCount, trainingInfo.clickPage, 5);
-            $('.search-footer').html(pageBarStr);  
+            var pageBarStr = pageBar.pageInit(showData.page.totalPage, showData.page.pageNo,showData.page.totalCount, trainingInfo.clickPage,trainingInfo.setPageSize);
+            $('.search-footer').html(pageBarStr);
+            $('#pageSizeSelect').find('option[text="10"]').attr("selected",true);
+            $('#pageSizeSelect option[value="'+$('#pageSize').val()+'"]').attr("selected", true);
         } 
     };  
       
@@ -66,6 +74,10 @@ var TrainingInfo = function(){
         $('#pageNo').val(page);// 修改为当前页,然后翻页查询  
         trainingInfo.settingQuery();  
     };  
+    this.setPageSize = function(pageSize){
+    	$('#pageSize').val(pageSize);
+        trainingInfo.settingQuery();
+    }
 };  
 var trainingInfo;  
 $(function(){  
