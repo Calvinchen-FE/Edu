@@ -45,15 +45,13 @@ var Announcement = function(){
             for (var i = 0; i < list.length; i++) {  
                 detailId = i;  
                 xHtml += '<tr>';  
-                xHtml += '<td><a href="javascript:;" data-toggle="modal" data-target="#announcementContent">'+ list[i].tzggbt + '</a></td>';  
-                xHtml += '<td width="20%">'+ list[i].createAt + '</td>';  
-                xHtml += '</tr>';
-                $('#announcementContentModalLabel').text(list[i].tzggbt);
-                $('#announcementContentModalText').text(list[i].tzggnr);
+                xHtml += '<td>'+ list[i].tzggnr + '</td>';  
+                xHtml += '<td>'+ list[i].create_at + '</td>';  
+                xHtml += '</tr>';  
             }  
             $('#dataList').html(xHtml);  
             var pageBarStr = pageBar.pageInit(showData.page.totalPage, showData.page.pageNo,showData.page.totalCount, announcement.clickPage, 5);
-            $('.search-footer').html(pageBarStr);
+            $('.search-footer').html(pageBarStr);  
         } 
     };  
       

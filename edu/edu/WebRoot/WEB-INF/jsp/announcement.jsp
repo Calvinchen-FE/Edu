@@ -58,19 +58,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 		</div>
 	</div>
-	<div class="modal fade" id="announcementContent" tabindex="-1" role="dialog">
-	  <div class="modal-dialog" role="document">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-	        <h4 class="modal-title" id="announcementContentModalLabel">提示</h4>
-	      </div>
-	      <div class="modal-body">
-	        <div id="announcementContentModalText"></div>
-	      </div>
-	    </div>
-	  </div>
-	</div>
 	<jsp:include page="footer.jsp"></jsp:include>
 	<script type="text/javascript" src="<%=basePath%>/resources/js/announcement.js"></script>
 </body>

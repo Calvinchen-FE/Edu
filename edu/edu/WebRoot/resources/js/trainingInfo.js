@@ -1,15 +1,15 @@
-var Announcement = function(){  
+var TrainingInfo = function(){  
     this.init = function(){  
         $('#inquireBtn').unbind('click').bind('click', function() {  
 //            $('#pageNo').val(1);// 每次查询都默认为打开第一页  
-            announcement.settingQuery();  
+            trainingInfo.settingQuery();  
         });  
     };  
     //根据查询条件查询  
     this.settingQuery = function(){  
         $('#pageBar').html('');  
-        var url = 'announcement/getAllTzgg.do';  
-        var inquireData = announcement.acquireInquireData();  
+        var url = 'trainingInfo/getAllPxhd.do';  
+        var inquireData = trainingInfo.acquireInquireData();  
         $.ajax({
             type: 'post',  
             async: true,  
@@ -19,7 +19,7 @@ var Announcement = function(){
             contentType:'application/json;charset=UTF-8',//关键是要加上这行
             traditional:true,//这使json格式的字符不会被转码
             success: function (result) {
-                announcement.callback(result);  
+                trainingInfo.callback(result);  
             }  
         });  
       
@@ -39,34 +39,39 @@ var Announcement = function(){
         var xHtml = '';  
         var list = showData.list;
         if (list.length == 0) {  
-            xHtml += '<tr><td colspan="2">没有数据</td></tr>';  
+            xHtml += '<tr><td colspan="7">没有数据</td></tr>';  
             $('#dataList').html(xHtml);  
         } else {  
             for (var i = 0; i < list.length; i++) {  
                 detailId = i;  
-                xHtml += '<tr>';  
-                xHtml += '<td><a href="javascript:;" data-toggle="modal" data-target="#announcementContent">'+ list[i].tzggbt + '</a></td>';  
-                xHtml += '<td width="20%">'+ list[i].createAt + '</td>';  
-                xHtml += '</tr>';
-                $('#announcementContentModalLabel').text(list[i].tzggbt);
-                $('#announcementContentModalText').text(list[i].tzggnr);
+                xHtml += '<tr><td>'+ i +'</td>'+
+		        '<td>'+ list[i].hdzt +'</td>'+
+		        '<td>'+ list[i].bmjzsj +'</td>'+
+		        '<td>'+ list[i].hdsj +'</td>'+
+		        '<td>'+ list[i].hddd +'</td>'+
+		        '<td>'+ list[i].hdzzdw +'</td>'+
+		        '<td>'+ list[i].zdcyrs +'</td>'+
+		        '<td>'+ list[i].pjbz +'</td>'+
+		        '<td>'+ list[i].pjnf +'</td>'+
+		        '<td><a class="link" href="javascript:;">报名</a></td>'+
+		        '</tr>';
             }  
             $('#dataList').html(xHtml);  
-            var pageBarStr = pageBar.pageInit(showData.page.totalPage, showData.page.pageNo,showData.page.totalCount, announcement.clickPage, 5);
-            $('.search-footer').html(pageBarStr);
+            var pageBarStr = pageBar.pageInit(showData.page.totalPage, showData.page.pageNo,showData.page.totalCount, trainingInfo.clickPage, 5);
+            $('.search-footer').html(pageBarStr);  
         } 
     };  
       
     this.clickPage = function(page){  
         $('#pageNo').val(page);// 修改为当前页,然后翻页查询  
-        announcement.settingQuery();  
+        trainingInfo.settingQuery();  
     };  
 };  
-var announcement;  
+var trainingInfo;  
 $(function(){  
       
-    announcement = new Announcement();  
-    announcement.init();  
+    trainingInfo = new TrainingInfo();  
+    trainingInfo.init();  
     //默认显示查询结果  
-    announcement.settingQuery();  
+    trainingInfo.settingQuery();  
 });

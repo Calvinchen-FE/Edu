@@ -5,10 +5,10 @@
     <id column="hdid" property="hdid" jdbcType="VARCHAR" />
     <result column="hdzt" property="hdzt" jdbcType="VARCHAR" />
     <result column="zjr" property="zjr" jdbcType="VARCHAR" />
-    <result column="hdnf" property="hdnf" jdbcType="INTEGER" />
-    <result column="bmjzsj" property="bmjzsj" jdbcType="TIMESTAMP" />
-    <result column="hdsj" property="hdsj" jdbcType="TIMESTAMP" />
-    <result column="hdzzdw" property="hdzzdw" jdbcType="VARCHAR" />
+    <result column="hdnf" property="hdnf" jdbcType="VARCHAR" />
+    <result column="bmjzsj" property="bmjzsj" jdbcType="VARCHAR" />
+    <result column="hdsj" property="hdsj" jdbcType="VARCHAR" />
+    <result column="hdzzdw" property="hdzzdw" jdbcType="INTEGER" />
     <result column="hddd" property="hddd" jdbcType="VARCHAR" />
     <result column="bmzt" property="bmzt" jdbcType="INTEGER" />
     <result column="zdcyrs" property="zdcyrs" jdbcType="INTEGER" />
@@ -55,8 +55,8 @@
       record_status, record_version, hdnr
       )
     values (#{hdid,jdbcType=VARCHAR}, #{hdzt,jdbcType=VARCHAR}, #{zjr,jdbcType=VARCHAR}, 
-      #{hdnf,jdbcType=INTEGER}, #{bmjzsj,jdbcType=TIMESTAMP}, #{hdsj,jdbcType=TIMESTAMP}, 
-      #{hdzzdw,jdbcType=VARCHAR}, #{hddd,jdbcType=VARCHAR}, #{bmzt,jdbcType=INTEGER}, 
+      #{hdnf,jdbcType=VARCHAR}, #{bmjzsj,jdbcType=VARCHAR}, #{hdsj,jdbcType=VARCHAR}, 
+      #{hdzzdw,jdbcType=INTEGER}, #{hddd,jdbcType=VARCHAR}, #{bmzt,jdbcType=INTEGER}, 
       #{zdcyrs,jdbcType=INTEGER}, #{dqcyrs,jdbcType=INTEGER}, #{hdpjrs,jdbcType=INTEGER}, 
       #{hdjb,jdbcType=INTEGER}, #{hdxf,jdbcType=INTEGER}, #{createAt,jdbcType=TIMESTAMP}, 
       #{createBy,jdbcType=VARCHAR}, #{updateAt,jdbcType=TIMESTAMP}, #{upateBy,jdbcType=VARCHAR}, 
@@ -141,16 +141,16 @@
         #{zjr,jdbcType=VARCHAR},
       </if>
       <if test="hdnf != null" >
-        #{hdnf,jdbcType=INTEGER},
+        #{hdnf,jdbcType=VARCHAR},
       </if>
       <if test="bmjzsj != null" >
-        #{bmjzsj,jdbcType=TIMESTAMP},
+        #{bmjzsj,jdbcType=VARCHAR},
       </if>
       <if test="hdsj != null" >
-        #{hdsj,jdbcType=TIMESTAMP},
+        #{hdsj,jdbcType=VARCHAR},
       </if>
       <if test="hdzzdw != null" >
-        #{hdzzdw,jdbcType=VARCHAR},
+        #{hdzzdw,jdbcType=INTEGER},
       </if>
       <if test="hddd != null" >
         #{hddd,jdbcType=VARCHAR},
@@ -206,16 +206,16 @@
         zjr = #{zjr,jdbcType=VARCHAR},
       </if>
       <if test="hdnf != null" >
-        hdnf = #{hdnf,jdbcType=INTEGER},
+        hdnf = #{hdnf,jdbcType=VARCHAR},
       </if>
       <if test="bmjzsj != null" >
-        bmjzsj = #{bmjzsj,jdbcType=TIMESTAMP},
+        bmjzsj = #{bmjzsj,jdbcType=VARCHAR},
       </if>
       <if test="hdsj != null" >
-        hdsj = #{hdsj,jdbcType=TIMESTAMP},
+        hdsj = #{hdsj,jdbcType=VARCHAR},
       </if>
       <if test="hdzzdw != null" >
-        hdzzdw = #{hdzzdw,jdbcType=VARCHAR},
+        hdzzdw = #{hdzzdw,jdbcType=INTEGER},
       </if>
       <if test="hddd != null" >
         hddd = #{hddd,jdbcType=VARCHAR},
@@ -266,10 +266,10 @@
     update app_pxhd
     set hdzt = #{hdzt,jdbcType=VARCHAR},
       zjr = #{zjr,jdbcType=VARCHAR},
-      hdnf = #{hdnf,jdbcType=INTEGER},
-      bmjzsj = #{bmjzsj,jdbcType=TIMESTAMP},
-      hdsj = #{hdsj,jdbcType=TIMESTAMP},
-      hdzzdw = #{hdzzdw,jdbcType=VARCHAR},
+      hdnf = #{hdnf,jdbcType=VARCHAR},
+      bmjzsj = #{bmjzsj,jdbcType=VARCHAR},
+      hdsj = #{hdsj,jdbcType=VARCHAR},
+      hdzzdw = #{hdzzdw,jdbcType=INTEGER},
       hddd = #{hddd,jdbcType=VARCHAR},
       bmzt = #{bmzt,jdbcType=INTEGER},
       zdcyrs = #{zdcyrs,jdbcType=INTEGER},
@@ -290,10 +290,10 @@
     update app_pxhd
     set hdzt = #{hdzt,jdbcType=VARCHAR},
       zjr = #{zjr,jdbcType=VARCHAR},
-      hdnf = #{hdnf,jdbcType=INTEGER},
-      bmjzsj = #{bmjzsj,jdbcType=TIMESTAMP},
-      hdsj = #{hdsj,jdbcType=TIMESTAMP},
-      hdzzdw = #{hdzzdw,jdbcType=VARCHAR},
+      hdnf = #{hdnf,jdbcType=VARCHAR},
+      bmjzsj = #{bmjzsj,jdbcType=VARCHAR},
+      hdsj = #{hdsj,jdbcType=VARCHAR},
+      hdzzdw = #{hdzzdw,jdbcType=INTEGER},
       hddd = #{hddd,jdbcType=VARCHAR},
       bmzt = #{bmzt,jdbcType=INTEGER},
       zdcyrs = #{zdcyrs,jdbcType=INTEGER},
