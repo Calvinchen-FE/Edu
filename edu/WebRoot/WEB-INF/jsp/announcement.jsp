@@ -32,12 +32,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											<div class="col-sm-12">
 												<table
 													class="table table-striped table-bordered table-hover text-center dataTable">
-													<tr>
-														<td>1</td>
-														<td>1</td>
-														<td>1</td>
-														<td>1</td>
-													</tr>
 													<tbody id="dataList">
 													</tbody>
 												</table>
