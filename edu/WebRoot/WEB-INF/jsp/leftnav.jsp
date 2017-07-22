@@ -20,7 +20,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="">
+                                <a href="<%= basePath %>trainingInfo/trainingInfoPage.do">
                                     <span class="menu-title" data-lang="main_customer_title">培训信息</span>
                                 </a>
                             </li>

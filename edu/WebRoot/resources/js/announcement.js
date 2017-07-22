@@ -39,16 +39,14 @@ var Announcement = function(){
         var xHtml = '';  
         var list = showData.list;
         if (list.length == 0) {  
-            xHtml += '<tr><td colspan="7">没有数据</td></tr>';  
+            xHtml += '<tr><td colspan="2">没有数据</td></tr>';  
             $('#dataList').html(xHtml);  
         } else {  
             for (var i = 0; i < list.length; i++) {  
                 detailId = i;  
                 xHtml += '<tr>';  
-                xHtml += '<td>' + (i + 1)+ '</td>';  
-                xHtml += '<td>'+ list[i].id + '</td>';  
-                xHtml += '<td>'+ list[i].cjr + '</td>';  
-                xHtml += '<td>'+ list[i].gxr + '</td>';  
+                xHtml += '<td>'+ list[i].tzggnr + '</td>';  
+                xHtml += '<td>'+ list[i].create_at + '</td>';  
                 xHtml += '</tr>';  
             }  
             $('#dataList').html(xHtml);  

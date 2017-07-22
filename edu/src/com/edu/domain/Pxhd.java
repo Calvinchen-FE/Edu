@@ -3,43 +3,47 @@ package com.edu.domain;
 import java.util.Date;
 
 public class Pxhd {
-    private String id;
-
     private String hdid;
 
-    private String xydm;
+    private String hdzt;
 
-    private String xymc;
+    private String zjr;
 
-    private String zgh;
+    private String hdnf;
 
-    private String xm;
+    private String bmjzsj;
 
-    private Integer bmbz;
+    private String hdsj;
 
-    private Date bmsj;
+    private Integer hdzzdw;
 
-    private Integer pjbz;
+    private String hddd;
 
-    private Integer pjnf;
+    private Integer bmzt;
 
-    private Date pjsj;
+    private Integer zdcyrs;
 
-    private Integer pjfs;
+    private Integer dqcyrs;
 
-    private String lrr;
+    private Integer hdpjrs;
+
+    private Integer hdjb;
+
+    private Integer hdxf;
+
+    private Date createAt;
+
+    private String createBy;
+
+    private Date updateAt;
+
+    private String upateBy;
 
     private Integer recordStatus;
 
     private Integer recordVersion;
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id == null ? null : id.trim();
-    }
+    private String hdnr;
 
     public String getHdid() {
         return hdid;
@@ -49,92 +53,140 @@ public class Pxhd {
         this.hdid = hdid == null ? null : hdid.trim();
     }
 
-    public String getXydm() {
-        return xydm;
+    public String getHdzt() {
+        return hdzt;
     }
 
-    public void setXydm(String xydm) {
-        this.xydm = xydm == null ? null : xydm.trim();
+    public void setHdzt(String hdzt) {
+        this.hdzt = hdzt == null ? null : hdzt.trim();
     }
 
-    public String getXymc() {
-        return xymc;
+    public String getZjr() {
+        return zjr;
     }
 
-    public void setXymc(String xymc) {
-        this.xymc = xymc == null ? null : xymc.trim();
+    public void setZjr(String zjr) {
+        this.zjr = zjr == null ? null : zjr.trim();
     }
 
-    public String getZgh() {
-        return zgh;
+    public String getHdnf() {
+        return hdnf;
     }
 
-    public void setZgh(String zgh) {
-        this.zgh = zgh == null ? null : zgh.trim();
+    public void setHdnf(String hdnf) {
+        this.hdnf = hdnf == null ? null : hdnf.trim();
     }
 
-    public String getXm() {
-        return xm;
+    public String getBmjzsj() {
+        return bmjzsj;
     }
 
-    public void setXm(String xm) {
-        this.xm = xm == null ? null : xm.trim();
+    public void setBmjzsj(String bmjzsj) {
+        this.bmjzsj = bmjzsj == null ? null : bmjzsj.trim();
     }
 
-    public Integer getBmbz() {
-        return bmbz;
+    public String getHdsj() {
+        return hdsj;
     }
 
-    public void setBmbz(Integer bmbz) {
-        this.bmbz = bmbz;
+    public void setHdsj(String hdsj) {
+        this.hdsj = hdsj == null ? null : hdsj.trim();
     }
 
-    public Date getBmsj() {
-        return bmsj;
+    public Integer getHdzzdw() {
+        return hdzzdw;
     }
 
-    public void setBmsj(Date bmsj) {
-        this.bmsj = bmsj;
+    public void setHdzzdw(Integer hdzzdw) {
+        this.hdzzdw = hdzzdw;
     }
 
-    public Integer getPjbz() {
-        return pjbz;
+    public String getHddd() {
+        return hddd;
     }
 
-    public void setPjbz(Integer pjbz) {
-        this.pjbz = pjbz;
+    public void setHddd(String hddd) {
+        this.hddd = hddd == null ? null : hddd.trim();
     }
 
-    public Integer getPjnf() {
-        return pjnf;
+    public Integer getBmzt() {
+        return bmzt;
     }
 
-    public void setPjnf(Integer pjnf) {
-        this.pjnf = pjnf;
+    public void setBmzt(Integer bmzt) {
+        this.bmzt = bmzt;
     }
 
-    public Date getPjsj() {
-        return pjsj;
+    public Integer getZdcyrs() {
+        return zdcyrs;
     }
 
-    public void setPjsj(Date pjsj) {
-        this.pjsj = pjsj;
+    public void setZdcyrs(Integer zdcyrs) {
+        this.zdcyrs = zdcyrs;
     }
 
-    public Integer getPjfs() {
-        return pjfs;
+    public Integer getDqcyrs() {
+        return dqcyrs;
     }
 
-    public void setPjfs(Integer pjfs) {
-        this.pjfs = pjfs;
+    public void setDqcyrs(Integer dqcyrs) {
+        this.dqcyrs = dqcyrs;
     }
 
-    public String getLrr() {
-        return lrr;
+    public Integer getHdpjrs() {
+        return hdpjrs;
     }
 
-    public void setLrr(String lrr) {
-        this.lrr = lrr == null ? null : lrr.trim();
+    public void setHdpjrs(Integer hdpjrs) {
+        this.hdpjrs = hdpjrs;
+    }
+
+    public Integer getHdjb() {
+        return hdjb;
+    }
+
+    public void setHdjb(Integer hdjb) {
+        this.hdjb = hdjb;
+    }
+
+    public Integer getHdxf() {
+        return hdxf;
+    }
+
+    public void setHdxf(Integer hdxf) {
+        this.hdxf = hdxf;
+    }
+
+    public Date getCreateAt() {
+        return createAt;
+    }
+
+    public void setCreateAt(Date createAt) {
+        this.createAt = createAt;
+    }
+
+    public String getCreateBy() {
+        return createBy;
+    }
+
+    public void setCreateBy(String createBy) {
+        this.createBy = createBy == null ? null : createBy.trim();
+    }
+
+    public Date getUpdateAt() {
+        return updateAt;
+    }
+
+    public void setUpdateAt(Date updateAt) {
+        this.updateAt = updateAt;
+    }
+
+    public String getUpateBy() {
+        return upateBy;
+    }
+
+    public void setUpateBy(String upateBy) {
+        this.upateBy = upateBy == null ? null : upateBy.trim();
     }
 
     public Integer getRecordStatus() {
@@ -151,5 +203,13 @@ public class Pxhd {
 
     public void setRecordVersion(Integer recordVersion) {
         this.recordVersion = recordVersion;
+    }
+
+    public String getHdnr() {
+        return hdnr;
+    }
+
+    public void setHdnr(String hdnr) {
+        this.hdnr = hdnr == null ? null : hdnr.trim();
     }
 }

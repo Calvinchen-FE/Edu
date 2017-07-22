@@ -3,103 +3,113 @@ package com.edu.domain;
 import java.util.Date;
 
 public class Tzgg {
-    private String id;
+    private String tzggh;
 
-    private String bt;
+    private String tzggbt;
 
-    private Date fbsj;
+    private Date tzggsj;
 
-    private Integer zd;
+    private Integer tzggbz;
 
-    private Date cjsj;
+    private Date createAt;
 
-    private String cjr;
+    private String createBy;
 
-    private Date gxsj;
+    private Date updateAt;
 
-    private String gxr;
+    private String updateBy;
 
-    private Integer zt;
+    private Integer recordStatus;
 
-    private byte[] nr;
+    private Integer recordVersion;
 
-    public String getId() {
-        return id;
+    private byte[] tzggnr;
+
+    public String getTzggh() {
+        return tzggh;
     }
 
-    public void setId(String id) {
-        this.id = id == null ? null : id.trim();
+    public void setTzggh(String tzggh) {
+        this.tzggh = tzggh == null ? null : tzggh.trim();
     }
 
-    public String getBt() {
-        return bt;
+    public String getTzggbt() {
+        return tzggbt;
     }
 
-    public void setBt(String bt) {
-        this.bt = bt == null ? null : bt.trim();
+    public void setTzggbt(String tzggbt) {
+        this.tzggbt = tzggbt == null ? null : tzggbt.trim();
     }
 
-    public Date getFbsj() {
-        return fbsj;
+    public Date getTzggsj() {
+        return tzggsj;
     }
 
-    public void setFbsj(Date fbsj) {
-        this.fbsj = fbsj;
+    public void setTzggsj(Date tzggsj) {
+        this.tzggsj = tzggsj;
     }
 
-    public Integer getZd() {
-        return zd;
+    public Integer getTzggbz() {
+        return tzggbz;
     }
 
-    public void setZd(Integer zd) {
-        this.zd = zd;
+    public void setTzggbz(Integer tzggbz) {
+        this.tzggbz = tzggbz;
     }
 
-    public Date getCjsj() {
-        return cjsj;
+    public Date getCreateAt() {
+        return createAt;
     }
 
-    public void setCjsj(Date cjsj) {
-        this.cjsj = cjsj;
+    public void setCreateAt(Date createAt) {
+        this.createAt = createAt;
     }
 
-    public String getCjr() {
-        return cjr;
+    public String getCreateBy() {
+        return createBy;
     }
 
-    public void setCjr(String cjr) {
-        this.cjr = cjr == null ? null : cjr.trim();
+    public void setCreateBy(String createBy) {
+        this.createBy = createBy == null ? null : createBy.trim();
     }
 
-    public Date getGxsj() {
-        return gxsj;
+    public Date getUpdateAt() {
+        return updateAt;
     }
 
-    public void setGxsj(Date gxsj) {
-        this.gxsj = gxsj;
+    public void setUpdateAt(Date updateAt) {
+        this.updateAt = updateAt;
     }
 
-    public String getGxr() {
-        return gxr;
+    public String getUpdateBy() {
+        return updateBy;
     }
 
-    public void setGxr(String gxr) {
-        this.gxr = gxr == null ? null : gxr.trim();
+    public void setUpdateBy(String updateBy) {
+        this.updateBy = updateBy == null ? null : updateBy.trim();
     }
 
-    public Integer getZt() {
-        return zt;
+    public Integer getRecordStatus() {
+        return recordStatus;
     }
 
-    public void setZt(Integer zt) {
-        this.zt = zt;
+    public void setRecordStatus(Integer recordStatus) {
+        this.recordStatus = recordStatus;
     }
 
-    public byte[] getNr() {
-        return nr;
+    public Integer getRecordVersion() {
+        return recordVersion;
     }
 
-    public void setNr(byte[] nr) {
-        this.nr = nr;
+    public void setRecordVersion(Integer recordVersion) {
+        this.recordVersion = recordVersion;
+    }
+
+    public byte[] getTzggnr() {
+        return tzggnr;
+    }
+
+    public void setTzggnr(byte[] tzggnr) {
+        this.tzggnr = tzggnr;
     }
 }
